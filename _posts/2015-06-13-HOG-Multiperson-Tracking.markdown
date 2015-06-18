@@ -15,6 +15,6 @@ The aim of the research is to develop a approach based on Histograms of Oriented
 <h3>References</h3>
 <ol>
 	<li>C. K. S. Cheung, «Robust background subtraction with foreground validation for urban traffic video,» EURASIP J. Appl. Signal Process, 2005.</li>
-	<li>A. S. M. L. Y. Tian, «Robust and efficient foreground analysis in complex surveillance videos,» Mach. Vis. Appl.), vol. 23, p. 967–983, 2012.<li>
+	<li>A. S. M. L. Y. Tian, «Robust and efficient foreground analysis in complex surveillance videos,» Mach. Vis. Appl.), vol. 23, p. 967–983, 2012.</li>
 	<li>Y. T. M. L. A. Senior, «Interactive motion analysis for video surveillance and long term scene monitoring,» Asian Conference on Computer Vision, ACCV, p. 164–174, 2010.</li>
 </ol>
