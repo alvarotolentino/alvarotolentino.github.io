@@ -1,15 +1,41 @@
 ---
 layout: default
 ---
-<div class="post">
+{% include breadcrumbs.html %}
+<!--=== Content Part ===-->
+<div class="container content">   
+  <div class="row blog-page">    
+    <!-- Left Sidebar -->
+    <div class="col-md-9 md-margin-bottom-40">
+      <!--Blog Post-->
+      <div class="row blog blog-medium margin-bottom-40">
+        <div class="col-md-12">
+          <h1 class="page-heading">{{ page.title }}</h1>
+          <div class="blog-post-tags">
+              <ul class="list-unstyled list-inline blog-info">
+                  <li><i class="fa fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}</li>
+                  {% if page.author %}<li><i class="fa fa-pencil"></i> {{ page.author }}</li>{% endif %}
+              </ul>
+              {% if page.tags %}
+              <ul class="list-unstyled list-inline blog-tags">
+                  <li>
+                      <i class="fa fa-tags"></i> 
+                      {{ page.tags }}
+                  </li>
+              </ul>
+              {% endif %}
+          </div>
+          <p>{{ content }}<p>
+        </div> 
+      </div>
+      <!--End Blog Post-->  
+    </div>
+    <!-- End Left Sidebar -->
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
-</div>
+    <!-- Right Sidebar -->
+    <div class="col-md-3">
+    </div>
+    <!-- End Right Sidebar -->
+  </div><!--/row-->        
+</div><!--/container-->   
+<!--=== End Content Part ===-->

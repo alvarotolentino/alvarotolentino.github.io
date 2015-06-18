@@ -1,23 +1,130 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<!--=== Breadcrumbs v1 ===-->
+<div class="breadcrumbs-v1">
+    <div class="container">
+        <h1>{{site.title}}</h1>
+        <span>{{site.description}}</span>
+    </div>
 </div>
+<!--=== End Breadcrumbs v1 ===-->
+<!--=== Content Part ===-->
+<div class="container content">   
+  <div class="row blog-page">    
+      <!-- Left Sidebar -->
+      <div class="col-md-9 md-margin-bottom-40">
+        <!--Research-->
+        <h1 class="page-heading">Research</h1>
+        {% for post in site.posts %}
+          {% if post.categories contains 'research' %}<div class="row blog blog-medium margin-bottom-40">
+            {% if post.image %}
+              <div class="col-md-5">
+                  <img class="img-responsive" src="{{ post.image | prepend: site.baseurl }}" alt="IMG">
+              </div>    
+              <div class="col-md-7">
+            {% else if %}
+              <div class="col-md-12">
+            {% endif %}
+              <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+              <ul class="list-unstyled list-inline blog-info">
+                  <li><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</li>
+              </ul>
+              {% if post.tags %}
+                <ul class="list-unstyled list-inline blog-tags">
+                  <li>
+                    <i class="fa fa-tags"></i> 
+                    {{ post.tags }}
+                  </li>
+                </ul>
+              {% endif %}
+              <p>{{ post.content | truncatewords:50}}</p>
+              <p><a class="btn-u btn-u-sm" href="{{ post.url | prepend: site.baseurl }}">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+            </div>      
+          </div>
+          <hr class="margin-bottom-40">
+          {% endif %}
+        {% endfor %}
+        <!--End Research-->
+
+        <!--Code-->
+        <h1 class="page-heading">Code</h1>
+        {% for post in site.posts %}
+          {% if post.categories contains 'code' %}<div class="row blog blog-medium margin-bottom-40">
+              {% if post.image %}
+                <div class="col-md-5">
+                    <img class="img-responsive" src="{{ post.image | prepend: site.baseurl }}" alt="IMG">
+                </div>    
+                <div class="col-md-7">
+              {% else if %}
+                <div class="col-md-12">
+              {% endif %}
+                <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+                <ul class="list-unstyled list-inline blog-info">
+                    <li><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</li>
+                </ul>
+                {% if post.tags %}
+                  <ul class="list-unstyled list-inline blog-tags">
+                    <li>
+                      <i class="fa fa-tags"></i> 
+                      {{ post.tags }}
+                    </li>
+                  </ul>
+                {% endif %}
+                <p>{{ post.content | truncatewords:50}}</p>
+                <p><a class="btn-u btn-u-sm" href="{{ post.url | prepend: site.baseurl }}">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+              </div>
+          </div>
+          <hr class="margin-bottom-40">
+          {% endif %}
+        {% endfor %}
+        <!--End Code-->
+        <h1 class="page-heading">Contact</h1>
+        <h2>who I'm?</h2>
+        <div class="row blog blog-medium margin-bottom-40">
+          <div class="col-md-5">
+            <img class="img-responsive" src="{{ "/assets/img/alvaro.jpg" | prepend: site.baseurl }}" alt="IMG">
+          </div>    
+          <div class="col-md-7">
+            <p>My name is Alvaro Tolentino</p>
+            <p>I studied a Master Degree in Informatic with a major in Computer Science at <a href="http://www.pucp.edu.pe/">PUCP</a></p>
+            <p>I currently continue my research in Computer Vision.</p>
+            <p>You can contact me by sending me a email at <a href="&#097;&#108;&#118;&#097;&#114;&#111;&#116;&#111;&#108;&#101;&#110;&#116;&#105;&#110;&#111;&#117;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#097;&#108;&#118;&#097;&#114;&#111;&#116;&#111;&#108;&#101;&#110;&#116;&#105;&#110;&#111;&#117;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- End Left Sidebar -->
+
+      <!-- Right Sidebar -->
+      <div class="col-md-3">
+        <!-- Posts -->
+        <div class="posts margin-bottom-40">
+            <div class="headline headline-md"><h2>Recent Entries</h2></div>
+            <ul class="list-unstyled blog-latest-posts margin-bottom-50">
+            {% for post in site.posts offset: 2 limit: 10 %}
+              <li>
+                <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3> 
+                <small>{{ post.date | date: "%b %-d, %Y" }} / {{ post.tags }}</small>
+                <p>{{ post.content | truncatewords:20}}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        </div><!--/posts-->
+        <!-- End Posts -->
+        <!-- Blog Latest Tweets -->
+        <div class="blog-twitter margin-bottom-30">
+            <div class="headline headline-md"><h2>Latest Tweets</h2></div>
+            <div class="blog-twitter-inner">
+                <i class="fa fa-twitter"></i>
+                <a href="https://twitter.com/atolentinou">@{{site.twitter_username}}</a> 
+                At vero eos et accusamus et iusto odio dignissimos. 
+                <a href="#">http://t.co/sBav7dm</a> 
+                <span>5 hours ago</span>
+            </div>
+        </div>
+        <!-- End Blog Latest Tweets -->
+      </div>
+      <!-- End Right Sidebar -->
+    </div><!--/row-->        
+</div><!--/container-->   
+<!--=== End Content Part ===-->

@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> 
+<html lang="en"> <!--<![endif]-->  
 
   {% include head.html %}
 
   <body>
-
+  <div class="wrapper">
     {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    
+    {{ content }}
 
     {% include footer.html %}
-
+  </div>
+  <script type="text/javascript" src="{{ "/assets/plugins/jquery/jquery.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/plugins/jquery/jquery-migrate.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/plugins/bootstrap/js/bootstrap.min.js" | prepend: site.baseurl }}"></script> 
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="{{ "/assets/plugins/back-to-top.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/assets/plugins/smoothScroll.js" | prepend: site.baseurl }}"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="{{ "/assets/js/custom.js" | prepend: site.baseurl }}"></script>
+  <!-- JS Page Level -->           
+  <script type="text/javascript" src="{{ "/assets/js/app.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function() {
+          App.init();
+          });
+  </script>
+  <script type="text/javascript">$(".breadcrumb li").last().addClass('active');</script>
+  <!--[if lt IE 9]>
+      <script src="{{ "/assets/plugins/respond.js" | prepend: site.baseurl }}"></script>
+      <script src="{{ "/assets/plugins/html5shiv.js" | prepend: site.baseurl }}"></script>
+      <script src="{{ "/assets/plugins/placeholder-IE-fixes.js" | prepend: site.baseurl }}"></script>
+  <![endif]-->
   </body>
 
 </html>
