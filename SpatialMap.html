@@ -76,7 +76,9 @@ d3.json("aeroport.json", function(data) {
           .attr("x", padding + 7)
           .attr("y", padding)
           .attr("dy", ".31em")
-          .text(function(d) { return d.key; });
+          .text(function(d) { 
+            JSON.stringify(d);
+            return d.key; });
 
       function transform(d) {
         d = new google.maps.LatLng(d.value[1], d.value[0]);
