@@ -40,7 +40,7 @@ html, body, #map {
 var map = new google.maps.Map(d3.select("#map").node(), {
   zoom: 8,
   center: new google.maps.LatLng(37.76487, -122.41948),
-  mapTypeId: google.maps.MapTypeId.TERRAIN
+  mapTypeId: google.maps.MapTypeId.SATELLITE
 });
 
 // Load the station data. When the data comes back, create an overlay.
