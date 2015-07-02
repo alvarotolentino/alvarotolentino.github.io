@@ -2,6 +2,16 @@
 <meta charset="utf-8">
 <style>
 
+html, body, #map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.marker {
+  position: absolute;
+}
+
 .link {
   stroke: #048ABF;
 }
@@ -19,8 +29,9 @@ var width = 1700,
     height = 1200;
 
 var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", 100%)
+    .attr("height", 100%)
+    .attr("class", "marker");
 
 var force = d3.layout.force()
     .size([width, height])
