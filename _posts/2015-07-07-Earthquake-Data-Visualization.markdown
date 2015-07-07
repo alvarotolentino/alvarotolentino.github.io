@@ -54,4 +54,4 @@ function eqfeed_callback(data) {
   map.data.addGeoJson(data);
 }
 </script>
-<div id="map-canvas" style="width:500px;height:380px;"></div>
+<div id="map-canvas" class="blog-img"></div>
