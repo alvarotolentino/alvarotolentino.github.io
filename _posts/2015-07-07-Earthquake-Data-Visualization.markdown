@@ -4,7 +4,7 @@ title:  "Earthquake with Google Maps API"
 author: Alvaro Tolentino
 date:   2015-07-07 02:49:17
 categories: research
-image: /assets/post/earthquake.png
+image: /assets/img/post/earthquake.png
 tags: [Earthquake Google Maps API]
 ---
 This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
