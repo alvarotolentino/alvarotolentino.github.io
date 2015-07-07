@@ -16,7 +16,6 @@ This is a example of how to generate a data visualization using Google Maps API 
 This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
 
 
-
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 var map;
@@ -55,6 +54,4 @@ function eqfeed_callback(data) {
   map.data.addGeoJson(data);
 }
 </script>
-
-
-<div id="googleMap" style="width:500px;height:380px;"></div>
+<div id="map-canvas" style="width:500px;height:380px;"></div>
