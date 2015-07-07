@@ -7,7 +7,7 @@ categories: research
 image: /assets/img/demo.jpg
 tags: [Earthquake Google Maps API]
 ---
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
   var mapProp = {
