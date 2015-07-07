@@ -9,6 +9,11 @@ tags: [Earthquake Google Maps API]
 ---
 This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
 
+This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
+
+This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
+
+This is a example of how to generate a data visualization using Google Maps API and a Geojson file with the information of the earthquakes.
 
 
 
