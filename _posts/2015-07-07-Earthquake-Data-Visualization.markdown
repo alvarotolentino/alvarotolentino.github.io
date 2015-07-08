@@ -232,18 +232,16 @@ Below three examples of the use of Google Maps API
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
 
 <script>
-    function loadMap1() {
-        var map;
-        google.maps.event.addDomListener(window, 'load', function () {
-            map = new google.maps.Map(document.getElementById('map-canvas1'), {
-                center: { lat: 28, lng: 15 },
-                zoom: 2
-            });
-
-            map.data.loadGeoJson('/data/earthquake.geojson');
+    var map1;
+    google.maps.event.addDomListener(window, 'load', function () {
+        map1 = new google.maps.Map(document.getElementById('map-canvas1'), {
+            center: { lat: 28, lng: 15 },
+            zoom: 2
         });
+    });
+    function loadMap1() {
+        map1.data.loadGeoJson('/data/earthquake.geojson');
     }
-    
 </script>
 
 <script>
