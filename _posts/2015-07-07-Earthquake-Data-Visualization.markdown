@@ -265,14 +265,14 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
     map.data.loadGeoJson('/data/earthquake.geojson');
   
     map.data.setStyle(function(feature) {
-      var mag = Math.exp(parseFloat(feature.getProperty('magnitude'))) * 0.08;
+      var mag = Math.exp(parseFloat(feature.getProperty('magnitude'))) * 0.1;
       return({
         icon: {
           path: google.maps.SymbolPath.CIRCLE,
           scale: mag,
           fillColor: '#f00',
           fillOpacity: 0.35,
-          strokeWeight: 0
+          strokeWeight: 0.5
         }
       });
     });
@@ -310,11 +310,6 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
     
       map.data.loadGeoJson('/data/earthquake.geojson');
     });
-    
-    // Defines the callback function referenced in the jsonp file.
-    function eqfeed_callback(data) {
-      map.data.addGeoJson(data);
-    }
     
     function styleFeature(feature) {
       var low = [151, 83, 34];   // color of mag 1.0
