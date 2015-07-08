@@ -305,7 +305,7 @@ Below three examples of the use of Google Maps API
     
     function styleFeature(feature) {
       var low = [151, 83, 34];   // color of mag 1.0
-      var high = [5, 240, 120];  // color of mag 6.0 and above
+      var high = [5, 100, 54];  // color of mag 6.0 and above
       var minMag = 1.0;
       var maxMag = 8.0;
     
