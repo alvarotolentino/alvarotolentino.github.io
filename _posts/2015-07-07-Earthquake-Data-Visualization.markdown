@@ -118,8 +118,8 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<h5>Result</h5>
 <button class="btn-u btn-u-red" type="button" onclick="loadMap1();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
+
 <div id="map-canvas1" style="width:auto;height:380px;"></div>
 
 
@@ -153,8 +153,8 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<h5>Result</h5>
 <button class="btn-u btn-u-red" type="button" onclick="loadMap2();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
+
 <div id="map-canvas2" style="width:auto;height:380px;"></div>
 
 
@@ -226,8 +226,8 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<h5>Result</h5>
 <button class="btn-u btn-u-red" type="button" onclick="loadMap3();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
+
 <div id="map-canvas3" style="width:auto;height:380px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
