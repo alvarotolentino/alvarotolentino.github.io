@@ -238,7 +238,7 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
 <h5>Result</h5>
 <div id="map-canvas3" style="width:auto;height:380px;"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
 
 <script>
   var map;
