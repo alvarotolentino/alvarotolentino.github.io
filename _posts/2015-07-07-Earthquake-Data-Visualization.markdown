@@ -236,7 +236,7 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
 {% endhighlight %}
 
 <h5>Result</h5>
-<div id="map-canvas3" style="width:auto;height:380px;"></div>
+<div id="map-canvas3" style="width:auto;height:380px;" onmouseover="loadGeojson()"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
 
@@ -299,16 +299,19 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
       'stylers': [{'visibility': 'on'}, {'hue': '#5f94ff'}, {'lightness': 60}]
     }];
     
-    google.maps.event.addDomListener(window, 'load', function() {
+    google.maps.event.addDomListener(window, 'load', initialize());
+    
+    function initialize(){
       map = new google.maps.Map(document.getElementById('map-canvas3'), {
         center: { lat: 28, lng: 15 },
         zoom: 2
       });
-    
       map.data.setStyle(styleFeature);
+    }
     
+    function loadGeojson(){
       map.data.loadGeoJson('/data/earthquake.geojson');
-    });
+    }
     
     function styleFeature(feature) {
       var low = [151, 83, 34];   // color of mag 1.0
