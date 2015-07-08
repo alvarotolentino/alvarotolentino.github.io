@@ -12,3 +12,7 @@ github_username:  alvarotolentino
 markdown: kramdown
 permalink: none
 gems: ['jekyll-twitter-plugin']
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
