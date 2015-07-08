@@ -265,7 +265,7 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
     map.data.loadGeoJson('/data/earthquake.geojson');
   
     map.data.setStyle(function(feature) {
-      var mag = Math.exp(parseFloat(feature.getProperty('magnitude'))) * 0.1;
+      var mag = Math.pow(feature.getProperty('magnitude'), 2);
       return({
         icon: {
           path: google.maps.SymbolPath.CIRCLE,
