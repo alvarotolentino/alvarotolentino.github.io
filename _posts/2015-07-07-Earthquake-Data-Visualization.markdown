@@ -302,8 +302,7 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
     google.maps.event.addDomListener(window, 'load', function() {
       map = new google.maps.Map(document.getElementById('map-canvas3'), {
         center: { lat: 28, lng: 15 },
-        zoom: 2,
-        styles: mapStyle
+        zoom: 2
       });
     
       map.data.setStyle(styleFeature);
@@ -315,7 +314,7 @@ function interpolateHsl(lowHsl, highHsl, fraction) {
       var low = [151, 83, 34];   // color of mag 1.0
       var high = [5, 69, 54];  // color of mag 6.0 and above
       var minMag = 1.0;
-      var maxMag = 6.0;
+      var maxMag = 8.0;
     
       // fraction represents where the value sits between the min and max
       var fraction = (Math.min(feature.getProperty('magnitude'), maxMag) - minMag) /
