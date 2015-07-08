@@ -232,7 +232,6 @@ Below three examples of the use of Google Maps API
 <button type="button" class="btn-u btn-u-red" onclick="loadMap3()">
   <i class="icon-custom icon-sm rounded-x icon-bg-u icon-line icon-rocket"></i>
 </button>
-<div id="map-canvas3" style="width:auto;height:380px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
 
