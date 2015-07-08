@@ -118,8 +118,8 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<button class="btn-u btn-u-red" type="button" onclick="loadMap1()"><i class="fa fa-bell-o"></i> Load</button>
-
+<h5>Result</h5>
+<button class="btn-u btn-u-red" type="button" onclick="loadMap1();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
 <div id="map-canvas1" style="width:auto;height:380px;"></div>
 
 
@@ -153,9 +153,10 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<button class="btn-u btn-u-red" type="button" onclick="loadMap2()"><i class="fa fa-bell-o"></i> Load</button>
-
+<h5>Result</h5>
+<button class="btn-u btn-u-red" type="button" onclick="loadMap2();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
 <div id="map-canvas2" style="width:auto;height:380px;"></div>
+
 
 <h3>Custom</h3>
 <h5>Javascript</h5>
@@ -225,8 +226,8 @@ Below three examples of the use of Google Maps API
 </script>
 {% endhighlight %}
 
-<button class="btn-u btn-u-red" type="button" onclick="loadMap3()"><i class="fa fa-bell-o"></i> Load</button>
-
+<h5>Result</h5>
+<button class="btn-u btn-u-red" type="button" onclick="loadMap3();this.disabled=true"><i class="fa fa-bell-o"></i> Load</button>
 <div id="map-canvas3" style="width:auto;height:380px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
@@ -242,87 +243,84 @@ Below three examples of the use of Google Maps API
     function loadMap1() {
         map1.data.loadGeoJson('/data/earthquake.geojson');
     }
-</script>
-
-<script>
-    function loadMap2() {
-        var map;
-        google.maps.event.addDomListener(window, 'load', function () {
-            map = new google.maps.Map(document.getElementById('map-canvas2'), {
-                center: { lat: 28, lng: 15 },
-                zoom: 2
-            });
-
-            map.data.loadGeoJson('/data/earthquake.geojson');
-
-            map.data.setStyle(function (feature) {
-                var mag = Math.pow(feature.getProperty('magnitude'), 2);
-                return ({
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: mag,
-                        fillColor: '#f00',
-                        fillOpacity: 0.35,
-                        strokeWeight: 0.5
-                    }
-                });
-            });
-        });
-    }
     
 </script>
 
 <script>
-    function loadMap3() {
-        var map;
-        var mapStyle = [{
-            'featureType': 'all',
-            'elementType': 'all',
-            'stylers': [{ 'visibility': 'on' }]
-        }, {
-            'featureType': 'landscape',
-            'elementType': 'geometry',
-            'stylers': [{ 'visibility': 'on' }, { 'color': '#fcfcfc' }]
-        }, {
-            'featureType': 'water',
-            'elementType': 'labels',
-            'stylers': [{ 'visibility': 'on' }]
-        }, {
-            'featureType': 'water',
-            'elementType': 'geometry',
-            'stylers': [{ 'visibility': 'on' }, { 'hue': '#5f94ff' }, { 'lightness': 60 }]
-        }];
-
-        google.maps.event.addDomListener(window, 'load', function () {
-            map = new google.maps.Map(document.getElementById('map-canvas3'), {
-                center: { lat: 28, lng: 15 },
-                zoom: 2
-            });
-            map.data.setStyle(function (feature) {
-                var low = [151, 83, 34];
-                var high = [5, 100, 54];
-                var minMag = 1.0;
-                var maxMag = 8.0;
-
-                var fraction = (Math.min(feature.getProperty('magnitude'), maxMag) - minMag) /
-                    (maxMag - minMag);
-
-                var color = interpolateHsl(low, high, fraction);
-
-                return {
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        strokeWeight: 0.5,
-                        strokeColor: '#fff',
-                        fillColor: color,
-                        fillOpacity: 2 / feature.getProperty('magnitude'),
-                        scale: Math.pow(feature.getProperty('magnitude'), 2)
-                    },
-                    zIndex: Math.floor(feature.getProperty('magnitude'))
-                };
-            });
-            map.data.loadGeoJson('/data/earthquake.geojson');
+    var map2;
+    google.maps.event.addDomListener(window, 'load', function () {
+        map2 = new google.maps.Map(document.getElementById('map-canvas2'), {
+            center: { lat: 28, lng: 15 },
+            zoom: 2
         });
+    });
+
+    function loadMap2() {
+        map2.data.loadGeoJson('/data/earthquake.geojson');
+        map2.data.setStyle(function (feature) {
+            var mag = Math.pow(feature.getProperty('magnitude'), 2);
+            return ({
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: mag,
+                    fillColor: '#f00',
+                    fillOpacity: 0.35,
+                    strokeWeight: 0.5
+                }
+            });
+        });
+    }
+</script>
+
+<script>
+    var map;
+    var mapStyle = [{
+        'featureType': 'all',
+        'elementType': 'all',
+        'stylers': [{ 'visibility': 'on' }]
+    }, {
+        'featureType': 'landscape',
+        'elementType': 'geometry',
+        'stylers': [{ 'visibility': 'on' }, { 'color': '#fcfcfc' }]
+    }, {
+        'featureType': 'water',
+        'elementType': 'labels',
+        'stylers': [{ 'visibility': 'on' }]
+    }, {
+        'featureType': 'water',
+        'elementType': 'geometry',
+        'stylers': [{ 'visibility': 'on' }, { 'hue': '#5f94ff' }, { 'lightness': 60 }]
+    }];
+
+    google.maps.event.addDomListener(window, 'load', function () {
+        map = new google.maps.Map(document.getElementById('map-canvas3'), {
+            center: { lat: 28, lng: 15 },
+            zoom: 2
+        });
+    });
+
+    function loadMap3() {
+        map.data.setStyle(function (feature) {
+            var low = [151, 83, 34];
+            var high = [5, 100, 54];
+            var minMag = 1.0;
+            var maxMag = 8.0;
+
+            var fraction = (Math.min(feature.getProperty('magnitude'), maxMag) - minMag) / (maxMag - minMag);
+            var color = interpolateHsl(low, high, fraction);
+            return {
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    strokeWeight: 0.5,
+                    strokeColor: '#fff',
+                    fillColor: color,
+                    fillOpacity: 2 / feature.getProperty('magnitude'),
+                    scale: Math.pow(feature.getProperty('magnitude'), 2)
+                },
+                zIndex: Math.floor(feature.getProperty('magnitude'))
+            };
+        });
+        map.data.loadGeoJson('/data/earthquake.geojson');
     }
 
     function interpolateHsl(lowHsl, highHsl, fraction) {
@@ -330,7 +328,6 @@ Below three examples of the use of Google Maps API
         for (var i = 0; i < 3; i++) {
             color[i] = (highHsl[i] - lowHsl[i]) * fraction + lowHsl[i];
         }
-
         return 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)';
     }
 </script>
