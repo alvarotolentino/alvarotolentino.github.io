@@ -229,7 +229,7 @@ Below three examples of the use of Google Maps API
 {% endhighlight %}
 
 <h5>Result</h5>
-<i class="icon-custom icon-sm rounded-x icon-bg-u icon-line icon-rocket" onclick="loadMap3()"></i>
+<div class="icon-custom icon-sm rounded-x icon-bg-u icon-line icon-rocket" onclick="loadMap3()"></div>
 <div id="map-canvas3" style="width:auto;height:380px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo37ZEPzpUI8AHly34EFA4We-irhnOJA"></script>
